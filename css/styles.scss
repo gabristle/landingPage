@@ -54,7 +54,7 @@ header{
     }
     img{
         padding: 0% 5% 20% 5%;
-        width: 320px;
+        width: 100%;
     }
 }
 h1{
@@ -74,6 +74,7 @@ p{
 }
 
 .video{
+    @include flexCenter(row);
     background-color: $lightgreen;
     height: 270px;
     img{
