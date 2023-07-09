@@ -6,6 +6,29 @@ $pink: #F268A9;
 $white: #FFF;
 $gray: #C4C4C4;
 $lightgreen: #DAF2F1;
+$verylightpurple:#F7F5FD;
+$lightblue: #EEF2FF;
+$blue: #5F9CFF;
+
+@mixin flexCenter($direction){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@mixin button(){
+    color: $white;
+    background-color: $pink;
+    font-weight: 400;
+    border-radius: 32px;
+    height: 64px;
+    width: 200px;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 15%;
+}
 
 * {
     margin: 0;
@@ -23,19 +46,11 @@ header{
 }
 
 .main{
+    @include flexCenter(column);
     background-color: $lightpurple;
-    text-align: center;
     button{
-        color: $white;
-        background-color: $pink;
-        font-weight: 400;
-        border-radius: 32px;
-        height: 64px;
-        width: 200px;
-        border: none;
+        @include button();
         margin-top: 30%;
-        font-size: 18px;
-        margin-bottom: 15%;
     }
     img{
         padding: 0% 5% 20% 5%;
@@ -64,5 +79,99 @@ p{
     img{
         padding: 15% 5% 15% 5%;
         width: 319.3px;
+    }
+}
+
+.features{
+    @include flexCenter(column);
+    padding: 20% 2% 20% 2%;
+    .feature{
+        padding: 10% 0% 10% 0%;
+    }
+}
+
+.quote{
+    background-color: $verylightpurple;
+    @include flexCenter(column);
+    padding: 15% 10%;
+    img{
+        padding: 4% 2%;
+        width: 250px;
+        height: 290px;
+    }
+    #quoteIcon{
+        align-self: self-start;
+        width: 62px;
+        height: 62px;
+        margin-bottom: -10%;
+    }
+    p{
+        color: $black;
+        text-align: start;
+        opacity: 100%;
+        font-weight: 600;
+    }
+    #author{
+        align-self: normal;
+        font-weight: 400;
+        opacity: 50%;
+    }
+}
+
+.mid-page{
+    padding: 0% 0% 25% 0%;
+    @include flexCenter(column);
+    background-color: $lightblue;
+    button{
+        @include button();
+        margin: 20% 0%;
+    }
+    img{
+        width: 90%;
+    }
+}
+
+footer{
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    padding: 15% 6%;
+    p{
+        opacity: 100%;
+        margin-bottom: 5%;
+    }
+    #company{
+        font-weight: 700;
+    }
+    li{
+        font-weight: 700;
+        list-style: none;
+        margin-bottom: 5%;
+    }
+    input{
+        padding: 5%;
+        border-radius: 10px;
+        border: solid 2px $gray;
+        margin-bottom: 5%;
+    }
+    button{
+        background-color: $blue;
+        border: none;
+        border-radius: 32px;
+        padding: 5% 0%;
+        color: $white;
+        margin-bottom: 5%;
+    }
+    a{
+        text-decoration: none;
+        color: $black;
+        font-weight: 700;
+    }
+
+    .social-icons{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 }
